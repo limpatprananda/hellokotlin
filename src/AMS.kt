@@ -2,9 +2,9 @@ import java.util.*
 
 fun main(args: Array<String>){
     println("Hello ${args[0]}")
-    feedTheFish()
-
-    eagerExample()
+//    feedTheFish()
+//    eagerExample()
+    dirtyProcessor()
 }
 
 fun eagerExample() {
@@ -53,6 +53,31 @@ fun isDirty(dirty: Int) = dirty > 30
 fun isSunday(day: String) = day == "Sunday"
 fun getDirtySensorReading() = 20
 fun makeNewAquarium() = println("Building new aquarium...")
+
+//start implement lamda (asign function into variable)
+var dirty = 20
+val waterFilter: (Int) -> Int = {
+    it + 1
+} // lamda initialize into waterFilter
+
+fun feedFish(dirty: Int) = dirty + 2 //single line function
+
+//asign lamda as a parameter
+fun updateDirty(dirty: Int, operation: (Int) -> Int): Int{
+    return operation(dirty)
+}
+
+fun dirtyProcessor(){
+    dirty = updateDirty(dirty, waterFilter)
+    dirty = updateDirty(dirty, ::feedFish)
+    dirty = updateDirty(dirty){
+        it + 50
+    }
+    dirty = updateDirty(dirty, {
+        it + 40
+    })
+}
+//finish implement lamda
 
 fun aquariumStatusReport(aquarium: Any = makeNewAquarium()){
 
