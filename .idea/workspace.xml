@@ -15,6 +15,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1TH4AaKHeQkLD9lUFwp39lXj3uA" />
   <component name="RunDashboard">
     <option name="ruleStates">
