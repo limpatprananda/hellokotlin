@@ -11,10 +11,15 @@ fun shouldChangedWater(
     temperature: Int = 22,
     dirty: Int = 20
 ): Boolean{
+
+    val isTooHot = temperature > 30
+    val isDirty = dirty > 30
+    val isSunday = day == "Sunday"
+
     return when{
-        temperature > 30 -> true
-        dirty > 30 -> true
-        day == "Sunday" -> true
+        isTooHot -> true
+        isDirty -> true
+        isSunday -> true
         else -> false
     }
 }
